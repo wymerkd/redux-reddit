@@ -1,14 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Row } from 'react-bootstrap';
+import LikeControl from './LikeControl'
 
 function Post(props){
   return(
     <div>
-      <h2>{props.title} </h2>
-      <h3> by: {props.author} </h3>
-      <h4> {props.postBody}</h4>
-      <hr/>
+      <Row>
+        <Col md="1" sm="1">
+          <LikeControl />
+        </Col>
+        <Col md="11" sm="11">
+          <h2>{props.title} </h2>
+          <h3> by: {props.author} </h3>
+          <h4> {props.postBody}</h4>
+          <hr/>
+        </Col>
+      </Row>
     </div>
   );
 }
