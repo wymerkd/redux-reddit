@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
+import NewPostControl from './components/NewPostControl';
+import NewPostForm from './components/NewPostForm';
+import Post from './components/Post';
+import PostList from './components/PostList';
+import {Switch, Route} from 'react-router-dom';
+import Header from './components/Header';
 import './App.css';
 
-function App() {
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      masterPostList: []
+    };
+    this.handleAddingNewPostToList =
+    this.handleAddingNewPostToList.bind(this);
+  }
+  handleAddingNewPostToList(newPost){
+    let newMasterPostList = this.state.masterPostList.slice();
+    newMasterPostList.push(newPost);
+    this.setState({masterPostList: newMasterPostList});
+  }
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+        <Header/>
+        <Switch>
+          <Route path='/newpost' component={NewPostControl} />
+          <Route exact path='/' component={PostList} />
+        </Switch>
+      </div>
   );
+}
 }
 
 export default App;
