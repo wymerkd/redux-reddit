@@ -5,7 +5,7 @@ function ConfirmationQuestion(props){
   return (
     <div>
       <p>You want to post?</p>
-      <button onClick={props.ononTroubleshootingConfirmation}>Yes</button>
+      <button onClick={props.onTroubleshootingConfirmation}>Yes</button>
     </div>
   );
 }

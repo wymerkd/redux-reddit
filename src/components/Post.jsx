@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 function Post(props){
   return(
     <div>
-    <h3>{props.author} - {props.title}</h3>
-    <h4> {props.postBody}</h4>
-    <hr/>
+      <h3>{props.author} - {props.title}</h3>
+      <h4> {props.postBody}</h4>
+      <hr/>
     </div>
   );
 }

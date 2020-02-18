@@ -1,6 +1,7 @@
 import React from 'react';
 import Post from './Post';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 function PostList(props){
   return(

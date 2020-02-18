@@ -19,7 +19,7 @@ handleTroubleshootingConfirmation(){
   render(){
     let currentlyVisibleContent = null;
     if (this.state.formVisibleOnPage){
-      currentlyVisibleContent = <NewPostForm onTroubleshootingConfirmation={this.handleTroubleshootingConfirmation} />;
+      currentlyVisibleContent = <NewPostForm onNewPostCreation={this.props.onNewPostCreation}/>;
     } else {
       currentlyVisibleContent = <ConfirmationQuestion onTroubleshootingConfirmation={this.handleTroubleshootingConfirmation}/>;
     }
