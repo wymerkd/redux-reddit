@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Col, Row } from 'react-bootstrap';
 
 function Post(props){
   return(
     <div>
-      <h3>{props.author} - {props.title}</h3>
+      <h2>{props.title} </h2>
+      <h3> by: {props.author} </h3>
       <h4> {props.postBody}</h4>
       <hr/>
     </div>

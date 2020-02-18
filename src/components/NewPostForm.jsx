@@ -32,7 +32,7 @@ function NewPostForm(props){
           id='postBody'
           placeholder='Create your post'
           ref={(textarea) => {_postBody = textarea;}} />
-          <button type='submit'>Help!</button>
+          <button type='submit'>Post!</button>
       </form>
     </div>
   );
