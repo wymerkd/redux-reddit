@@ -4,7 +4,7 @@ import { Col, Row } from 'react-bootstrap';
 import LikeControl from './LikeControl'
 
 function Post(props){
-  return(
+  const postInformation =
     <div>
       <Row>
         <Col md="1" sm="1">
@@ -18,8 +18,13 @@ function Post(props){
         </Col>
       </Row>
     </div>
+    return(
+      <div>
+        {postInformation}
+      </div>
   );
 }
+
 
 Post.propTypes ={
   author: PropTypes.string.isRequired,

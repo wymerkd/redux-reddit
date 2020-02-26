@@ -31,6 +31,6 @@ handleTroubleshootingConfirmation(){
   }
 }
 NewPostControl.propTypes = {
-  onNewTicketCreation: PropTypes.func
+  onNewPostCreation: PropTypes.func
 };
 export default NewPostControl;

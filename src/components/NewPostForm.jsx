@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
-
+import { connect } from 'react-redux';
 
 function NewPostForm(props){
   let _author = null;
@@ -10,6 +10,15 @@ function NewPostForm(props){
 
   function handleTroubleshootingConfirmation(event){
     event.preventDefault();
+    const { dispatch } = props;
+    const action = {
+      type: 'ADD_POST',
+      id: v4(),
+      author: _author.value,
+      title: _title.value,
+      postBody: _postBody.value
+    }
+    dispatch(action)
     props.onNewPostCreation({author: _author.value, title: _title.value, postBody: _postBody.value, id: v4()});
     _author.value = '';
     _title.value = '';
@@ -41,5 +50,7 @@ function NewPostForm(props){
 NewPostForm.propTypes = {
   onNewPostCreation: PropTypes.func
 };
+
+NewPostForm = connect()(NewPostForm);
 
 export default NewPostForm;

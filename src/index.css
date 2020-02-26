@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  background-image:
+linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,83,0.41360294117647056) 0%, rgba(0,212,255,1) 89%),
+  url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/burmese-python-native-to-southern-and-southeast-asia-news-photo-601067216-1554741935.jpg');
+  background-size: stretch;
+  /* background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,83,0.41360294117647056) 0%, rgba(0,212,255,1) 89%),
+  url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/burmese-python-native-to-southern-and-southeast-asia-news-photo-601067216-1554741935.jpg'); */
+}

@@ -3,13 +3,30 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
+import { createStore } from 'redux';
+import postListReducer from './reducers/post-list-reducer';
 
-ReactDOM.render(<HashRouter>
+const store = createStore(postListReducer);
+
+const render = (Component) => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <HashRouter>
+        <Component/>
+      </HashRouter>
+    </Provider>,
+    document.getElementById('react-app-root')
+  );
+};
+
+render(App);
+/*eslint-disable */
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    render(<HashRouter>
                   <App />
-                </HashRouter>, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+                </HashRouter>, document.getElementById('react-app-root'));
+  });
+}

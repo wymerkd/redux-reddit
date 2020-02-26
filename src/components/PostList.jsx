@@ -8,18 +8,19 @@ import { Col, Row } from 'react-bootstrap';
 function PostList(props){
     return(
       <div>
-
-      {props.postList.map((post) =>
-        <Post author={post.author}
+      <hr/>
+      {Object.keys(props.postList).map(function(postId){
+        let post = props.postList[postId];
+        return <Post author={post.author}
         title={post.title}
         postBody={post.postBody}
         key={post.id}/>
-      )}
-      </div>
+      })}
+  </div>
     );
 }
 PostList.propTypes ={
-  postList: PropTypes.array
+  postList: PropTypes.object
 };
 
 export default PostList;
